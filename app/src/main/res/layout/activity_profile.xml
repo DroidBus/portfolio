@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ProfileActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/profile"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tajmahal_new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/gradient_profile_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/background"
+        android:src="@drawable/gradient_profile_curved"
+        app:layout_constraintHeight_percent="0.70"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/layout_toolbar"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:src="@drawable/female_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:text="@string/name"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+       />
+
+
+    <TextView
+        android:id="@+id/designation"
+        android:text="@string/designation"
+        android:textSize="@dimen/_16sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/location"
+        android:text="@string/location"
+        android:textSize="@dimen/_16sp"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/designation"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/gradient_profile_top"
+        android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/whatsapp"
+        android:src="@drawable/icon_whatsapp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_bias="0.75"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gmail"
+        android:src="@drawable/icon_gmail"
+        app:layout_constraintStart_toEndOf="@id/whatsapp"
+        app:layout_constraintBottom_toBottomOf="@id/whatsapp"
+        app:layout_constraintHorizontal_bias="0.3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"
+        android:src="@drawable/icon_linkedin"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintBottom_toBottomOf="@id/gmail"
+        app:layout_constraintStart_toEndOf="@id/gmail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

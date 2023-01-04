@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PortfolioApplication</string>
+    <string name="profile">Profile</string>
+    <string name="name">Shweta Sharma</string>
+    <string name="designation">Android Application Developer-II</string>
+    <string name="location">New Delhi, India</string>
+    <string name="background">Background</string>
+</resources>
