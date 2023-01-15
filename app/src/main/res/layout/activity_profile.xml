@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/_10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/off_beat_white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ProfileActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/profile"
-        android:scaleType="centerCrop"
-        android:src="@drawable/tajmahal_new"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/gradient_profile_top"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:contentDescription="@string/background"
-        android:src="@drawable/gradient_profile_curved"
-        app:layout_constraintHeight_percent="0.70"
+        android:src="@drawable/tajmahal_new"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/roundedCorners"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent=".5"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/background"
+        android:src="@drawable/gradient_profile_curved"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
 
     <include
         android:id="@+id/tool_bar"
@@ -88,39 +98,144 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/gradient_profile_top"
-        android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/like"
+        android:layout_marginTop="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="@id/location"
+        app:layout_constraintEnd_toEndOf="@id/location"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        android:src="@drawable/heart_icon"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_30dp"/>
+
+
+    <TextView
+        android:id="@+id/favorite_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/like"
+        android:text="112"
+        android:visibility="invisible"
+        android:textSize="@dimen/_14sp"
+        android:textColor="@color/teal_200"
+        android:layout_marginStart="@dimen/_60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="@id/favorite_count"
+        app:layout_constraintEnd_toEndOf="@id/favorite_count"
+        app:layout_constraintTop_toBottomOf="@id/favorite_count"
+        android:textSize="@dimen/_12sp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="@string/favourites"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/profile_views"
+        app:layout_constraintTop_toTopOf="@id/like"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="116"
+        android:textSize="@dimen/_14sp"
+        android:visibility="invisible"
+        android:textColor="@color/teal_200"
+        android:layout_marginEnd="@dimen/_60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="@string/profile_views"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/profile_views"
+        app:layout_constraintStart_toStartOf="@id/profile_views"
+        app:layout_constraintTop_toBottomOf="@id/profile_views" />
+
+
+    <TextView
+        android:id="@+id/profile_summary"
+        android:layout_marginTop="@dimen/_160dp"
+        android:text="@string/profile_summary"
+        android:paddingStart="@dimen/_30dp"
+        android:paddingEnd="@dimen/_30dp"
+        android:paddingTop="@dimen/_30dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/whatsapp"
-        android:src="@drawable/icon_whatsapp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintHorizontal_bias="0.75"
-        android:layout_width="@dimen/_30dp"
-        android:layout_height="@dimen/_30dp"/>
+        android:layout_marginTop="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="@id/profile_summary"
+        app:layout_constraintTop_toBottomOf="@id/profile_summary"
+        app:layout_constraintEnd_toStartOf="@+id/linkedIn"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginStart="@dimen/_20dp"
+        android:src="@drawable/whatsapp_icon"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/gmail"
-        android:src="@drawable/icon_gmail"
+        android:id="@+id/linkedIn"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:src="@drawable/linkedin_icon"
+        android:layout_marginStart="@dimen/_20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/whatsapp"
+        app:layout_constraintEnd_toStartOf="@+id/stackoverflow"
         app:layout_constraintStart_toEndOf="@id/whatsapp"
-        app:layout_constraintBottom_toBottomOf="@id/whatsapp"
-        app:layout_constraintHorizontal_bias="0.3"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_30dp"/>
+        app:layout_constraintTop_toTopOf="@+id/whatsapp" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="@dimen/_30dp"
-        android:layout_height="@dimen/_30dp"
-        android:src="@drawable/icon_linkedin"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintBottom_toBottomOf="@id/gmail"
-        app:layout_constraintStart_toEndOf="@id/gmail" />
+        android:id="@+id/stackoverflow"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:src="@drawable/stackoverflow_icon"
+        android:layout_marginStart="@dimen/_20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linkedIn"
+        app:layout_constraintStart_toEndOf="@id/linkedIn"
+        app:layout_constraintEnd_toEndOf="@id/profile_summary"
+        app:layout_constraintTop_toTopOf="@+id/linkedIn" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/skills_label"
+        android:text="@string/skills"
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        android:textColor="@color/charcoal_black"
+        android:layout_marginStart="@dimen/_30dp"
+        android:layout_marginTop="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/whatsapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_skills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_30dp"
+        android:layout_marginEnd="@dimen/_30dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:overScrollMode="never"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/skills_label"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

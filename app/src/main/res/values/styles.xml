@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedCorners" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">80dp</item>
+        <item name="cornerSizeBottomRight">80dp</item>
+    </style>
+    <style name="Colors_Widget.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/splash_bg</item>
+        <item name="chipStrokeColor">@color/splash_bg</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="variants_popup_chip_style" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

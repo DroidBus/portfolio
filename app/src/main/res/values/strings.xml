@@ -1,8 +1,32 @@
 <resources>
-    <string name="app_name">PortfolioApplication</string>
+    <string name="app_name">Portfolio</string>
     <string name="profile">Profile</string>
     <string name="name">Shweta Sharma</string>
     <string name="designation">Android Application Developer-II</string>
     <string name="location">New Delhi, India</string>
     <string name="background">Background</string>
+    <string name="favourites">Favorites</string>
+    <string name="profile_views">Profile Views</string>
+    <string name="profile_summary">I am a seasoned Android developer with over
+        5.5 years of professional experience in the field.
+        Expertise in JAVA and kotlin, with various android jetpack components working experience.
+</string>
+    <string name="skills">SKILLS</string>
+    <string name="my_portfolio">My Portfolio</string>
+
+
+    <string-array name="skills_array">
+        <item>JAVA</item>
+        <item>Kotlin</item>
+        <item>Android Development</item>
+        <item>Sqlite</item>
+        <item>Room</item>
+        <item>Jetpack Components</item>
+        <item>View Binding</item>
+        <item>Data Binding</item>
+        <item>Constraint Layout</item>
+        <item>LiveData</item>
+        <item>MVVM and MVP</item>
+        <item>Window Manager</item>
+    </string-array>
 </resources>

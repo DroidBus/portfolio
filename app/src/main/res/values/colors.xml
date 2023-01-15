@@ -10,4 +10,6 @@
     <color name="black_half_opacity">#4D000000</color>
     <color name="splash_bg">#50B9E9</color>
     <color name="header_toolbar">#9D968D</color>
+    <color name="off_beat_white">#f5f5f5</color>
+    <color name="charcoal_black">#36454F</color>
 </resources>
